@@ -21,15 +21,19 @@ public class Transformacion {
 				arbolCopia.addLeftChild(sumaRec(arbol.getLeftChild()));
 				if (arbol.getLeftChild().isLeaf())
 					sumaHijos += arbol.getLeftChild().getData();
-				else
+				else {
+					sumaHijos += arbol.getLeftChild().getData();
 					sumaHijos += arbolCopia.getLeftChild().getData();
+				}
 			}
 			if (arbol.hasRightChild()) {
 				arbolCopia.addRightChild(sumaRec(arbol.getRightChild()));
 				if (arbol.getRightChild().isLeaf())
 					sumaHijos += arbol.getRightChild().getData();
-				else
+				else {
+					sumaHijos += arbol.getRightChild().getData();
 					sumaHijos += arbolCopia.getRightChild().getData();
+				}
 			}
 			arbolCopia.setData(sumaHijos);
 			return arbolCopia;
