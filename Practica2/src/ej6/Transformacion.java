@@ -19,18 +19,12 @@ public class Transformacion {
 		if (!arbol.isLeaf()) {
 			if (arbol.hasLeftChild()) {
 				arbolCopia.addLeftChild(sumaRec(arbol.getLeftChild()));
-				if (arbol.getLeftChild().isLeaf())
-					sumaHijos += arbol.getLeftChild().getData();
-				else {
 					sumaHijos += arbol.getLeftChild().getData();
 					sumaHijos += arbolCopia.getLeftChild().getData();
 				}
 			}
 			if (arbol.hasRightChild()) {
 				arbolCopia.addRightChild(sumaRec(arbol.getRightChild()));
-				if (arbol.getRightChild().isLeaf())
-					sumaHijos += arbol.getRightChild().getData();
-				else {
 					sumaHijos += arbol.getRightChild().getData();
 					sumaHijos += arbolCopia.getRightChild().getData();
 				}
